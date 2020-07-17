@@ -6,6 +6,7 @@
 //  Copyright © 2020 Phil.Feng. All rights reserved.
 //
 
+/// 循环链表
 public class CircularLinkedList<E: Equatable> {
     /// 链表的头结点
     public var head: LinkNode<E>?
