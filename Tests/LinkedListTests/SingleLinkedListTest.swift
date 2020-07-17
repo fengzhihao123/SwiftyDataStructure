@@ -36,26 +36,26 @@ struct SingleLinkedListTest {
         linkedList.insert(2, at: 1)
         
         linkedList.removeLast()
-        assert(linkedList.linkedListPrint() == [1, 2])
+        assert(linkedList.getAllElements() == [1, 2])
         
         linkedList.removeLast()
-        assert(linkedList.linkedListPrint() == [1])
+        assert(linkedList.getAllElements() == [1])
         
         linkedList.removeLast()
-        assert(linkedList.linkedListPrint() == [])
+        assert(linkedList.getAllElements() == [])
         
         linkedList.append(atHead: 1)
         linkedList.append(atTail: 3)
         linkedList.insert(2, at: 1)
         
         linkedList.removeFirst()
-        assert(linkedList.linkedListPrint() == [2, 3])
+        assert(linkedList.getAllElements() == [2, 3])
         
         linkedList.removeFirst()
-        assert(linkedList.linkedListPrint() == [3])
+        assert(linkedList.getAllElements() == [3])
         
         linkedList.removeFirst()
-        assert(linkedList.linkedListPrint() == [])
+        assert(linkedList.getAllElements() == [])
         
         
         linkedList.append(atHead: 1)
@@ -63,16 +63,16 @@ struct SingleLinkedListTest {
         linkedList.insert(2, at: 1)
         
         linkedList.remove(at: 1)
-        assert(linkedList.linkedListPrint() == [1, 3])
+        assert(linkedList.getAllElements() == [1, 3])
         
         linkedList.remove(at: 2)
-        assert(linkedList.linkedListPrint() == [1, 3])
+        assert(linkedList.getAllElements() == [1, 3])
         
         linkedList.remove(at: 1)
-        assert(linkedList.linkedListPrint() == [1])
+        assert(linkedList.getAllElements() == [1])
         
         linkedList.remove(at: 0)
-        assert(linkedList.linkedListPrint() == [])
+        assert(linkedList.getAllElements() == [])
     }
     
     static func testUpdate() {

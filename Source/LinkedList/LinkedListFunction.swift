@@ -58,4 +58,7 @@ protocol LinkedListFunction {
     /// - Returns: 如果链表中包含该元素，返回 true，反之则返回 false
     func contains(_ element: E) -> Bool
 
+    /// 获取链表所有元素
+    /// - Returns: 返回包含链表所有元素的数组
+    func getAllElements() -> [E]
 }

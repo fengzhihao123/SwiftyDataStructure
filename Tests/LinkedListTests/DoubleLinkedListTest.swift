@@ -33,7 +33,7 @@ struct DoubleLinkedListTest {
         assert(linkedList.count == 2)
         
         assert(linkedList.contains(1), "contains(_ element: E) -> Bool error")
-
+        
         linkedList.removeAll()
         assert(linkedList.count == 0)
     }

@@ -44,18 +44,6 @@ public class SingleLinkedList<E: Equatable> {
         }
         return curNode
     }
-    
-    /// 打印链表当前元素 - 方便调试
-    func linkedListPrint() -> [E] {
-        var nodes = [E]()
-        var curNode = head
-        while curNode != nil {
-            nodes.append(curNode!.val)
-            curNode = curNode?.next
-        }
-        
-        return nodes
-    }
 }
 
 extension SingleLinkedList: LinkedListFunction {
@@ -176,5 +164,16 @@ extension SingleLinkedList: LinkedListFunction {
             curNode = curNode?.next
         }
         return false
+    }
+    
+    public func getAllElements() -> [E] {
+        var nodes = [E]()
+        var curNode = head
+        while curNode != nil {
+            nodes.append(curNode!.val)
+            curNode = curNode?.next
+        }
+        
+        return nodes
     }
 }

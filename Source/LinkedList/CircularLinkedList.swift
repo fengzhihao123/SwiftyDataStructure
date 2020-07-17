@@ -37,20 +37,6 @@ public class CircularLinkedList<E: Equatable> {
         
         return curNode
     }
-    
-    /// 打印链表当前元素 - 方便调试
-    func linkedListPrint() -> [E] {
-        guard count > 0 else { return [] }
-        var nodes = [E]()
-        var curNode = head
-        while curNode?.next?.val != head?.val {
-            nodes.append(curNode!.val)
-            curNode = curNode?.next
-        }
-        
-        nodes.append(curNode!.val)
-        return nodes
-    }
 }
 
 extension CircularLinkedList: LinkedListFunction {
@@ -186,5 +172,18 @@ extension CircularLinkedList: LinkedListFunction {
             curNode = curNode?.next
         }
         return false
+    }
+    
+    public func getAllElements() -> [E] {
+        guard count > 0 else { return [] }
+        var nodes = [E]()
+        var curNode = head
+        while curNode?.next?.val != head?.val {
+            nodes.append(curNode!.val)
+            curNode = curNode?.next
+        }
+        
+        nodes.append(curNode!.val)
+        return nodes
     }
 }

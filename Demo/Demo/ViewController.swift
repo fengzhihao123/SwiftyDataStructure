@@ -18,12 +18,13 @@ class ViewController: UIViewController {
         SingleLinkedListTest.test()
         DoubleLinkedListTest.test()
         CircularLinkedListTest.test()
-        
+
         QueueTest.test()
         DequeTest.test()
         CircularQueueTest.test()
         
         print("end - test")
+        
     }
 }
 

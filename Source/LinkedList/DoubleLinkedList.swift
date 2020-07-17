@@ -6,7 +6,7 @@
 //  Copyright © 2020 Phil.Feng. All rights reserved.
 //
 
-/// 双链表的节点
+/// 双链表的节点，通常你不需要直接使用该类。(Double linked list of nodes, usually you do not need to use this class directly)
 public class DoubleLinkNode<E: Equatable> {
     var val: E
     var next: DoubleLinkNode?
@@ -23,14 +23,15 @@ public class DoubleLinkNode<E: Equatable> {
     }
 }
 
+/// 双向链表  (Double linked list)
 public class DoubleLinkedList<E: Equatable> {
     public var head: DoubleLinkNode<E>?
     public var tail: DoubleLinkNode<E>?
     private(set) var count = 0
     
-    /// 内部获取节点的方法
-    /// - Parameter index: 获取位置
-    /// - Returns: 当前 index 的节点
+    /// 获取节点  (Get node)
+    /// - Parameter index: 获取位置 (Index)
+    /// - Returns: 当前 index 的节点 (The node of the current index)
     private func _node(_ index: Int) -> DoubleLinkNode<E>? {
         guard index < count else {
             return nil
@@ -40,14 +41,14 @@ public class DoubleLinkedList<E: Equatable> {
         if index == count - 1 { return tail }
         var curNode: DoubleLinkNode<E>?
         var curIndex = index
-        if index < count/2 { // 前半段
+        if index < count/2 { // 前半段 (The first half)
             curNode = head
             while curIndex > 0 {
                 curNode = curNode?.next
                 curIndex -= 1
             }
             
-        } else { // 后半段
+        } else { // 后半段 (The second half)
             curNode = tail
             curIndex = count - 1
             
@@ -58,19 +59,6 @@ public class DoubleLinkedList<E: Equatable> {
         }
         return curNode
     }
-    
-    /// 打印链表当前元素 - 方便调试
-    func linkedListPrint() -> [E] {
-        var nodes = [E]()
-        var curNode = head
-        while curNode != nil {
-            nodes.append(curNode!.val)
-            curNode = curNode?.next
-        }
-        
-        return nodes
-    }
-    
 }
 
 extension DoubleLinkedList: LinkedListFunction {
@@ -130,11 +118,13 @@ extension DoubleLinkedList: LinkedListFunction {
         } else if index == count {
             return removeLast()
         } else {
-            count -= 1
             let node = _node(index)
             let old = node
+            
             node?.prev?.next = node?.next
             node?.next?.prev = node?.prev
+            
+            count -= 1
             return old?.val
         }
     }
@@ -166,10 +156,18 @@ extension DoubleLinkedList: LinkedListFunction {
     }
     
     public func removeAll() {
+        // 将所有元素置空 (Empty all elements)
+        var curNode = head
+        while curNode != nil {
+            let tempNext = curNode?.next
+            curNode?.next = nil
+            curNode?.prev = nil
+            curNode = tempNext
+        }
+        
         head = nil
         tail = nil
         count = 0
-        #warning("TODO: 循环删除别的元素")
     }
     
     public func update(at index: Int, _ newElement: E) {
@@ -198,5 +196,16 @@ extension DoubleLinkedList: LinkedListFunction {
             curNode = curNode?.next
         }
         return false
+    }
+    
+    public func getAllElements() -> [E] {
+        var nodes = [E]()
+        var curNode = head
+        while curNode != nil {
+            nodes.append(curNode!.val)
+            curNode = curNode?.next
+        }
+        
+        return nodes
     }
 }
