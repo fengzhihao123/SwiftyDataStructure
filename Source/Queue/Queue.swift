@@ -7,15 +7,15 @@
 //
 
 public struct Queue<Element> {
-    /// 队列是否为空
+    /// 队列是否为空 (Is the queue empty)
     public var isEmpty: Bool { return _queueBuffer.count == 0 }
-    /// 队列是否已满
+    /// 队列是否已满 (Is the queue full)
     public var isFull: Bool { return _queueBuffer.isFull }
-    /// 队头
+    /// 队头 (The first element of queue)
     public var first: Element? { return _queueBuffer.first }
-    /// 队列元素数量
+    /// 队列元素数量 (Number of queue elements)
     public var count: Int { return _queueBuffer.count }
-    /// 队列底层结构实现
+    /// 队列底层结构实现 (The buffer  of queue)
     private var _queueBuffer: QueueBuffer<Element>!
     private var _capacity: Int
     
@@ -25,8 +25,8 @@ public struct Queue<Element> {
         _queueBuffer = QueueBuffer(capacity: capacity)
     }
     
-    /// 入队
-    /// - Parameter newElement: 入队的元素
+    /// 入队 (Enter Queue)
+    /// - Parameter newElement: 入队的元素 （The Element of enter queue）
     public mutating func append(_ newElement: Element) {
         // 自动扩容，复杂度O(n) (Automatic expansion, Complexity: O(n))
         if _queueBuffer.isFull {
@@ -37,8 +37,8 @@ public struct Queue<Element> {
         _queueBuffer.append(newElement)
     }
     
-    /// 出队
-    /// - Returns: 出队的元素
+    /// 出队 (Dequeue)
+    /// - Returns: 出队的元素 （The Element of dequeue）
     @discardableResult
     public mutating func popFirst() -> Element? {
         return _queueBuffer.popFirst()
@@ -47,20 +47,20 @@ public struct Queue<Element> {
 
 
 
-/// 队列底部结构
+/// 队列底部结构 (Storage buffer for a deque)
 final class QueueBuffer<Element> {
     
-    /// buffer 的最大容量
+    /// buffer 的容量 (The capacity of this storage buffer)
     let capacity: Int
-    /// buffer 的第一个元素
+    /// buffer 的第一个元素 (The first element of buffer)
     var first: Element? { return elements.advanced(by: start).pointee }
-    /// buffer 是否达到最大容量
+    /// buffer 是否达到最大容量 (Buffer is full)
     var isFull: Bool { return count == capacity }
-    /// buffer 的元素数量
+    /// buffer 的元素数量 (The number of items currently in this deque)
     fileprivate(set) var count: Int
-    /// buffer 的起始位置
+    /// buffer 的起始位置 (The index of the first item)
     fileprivate(set) var start: Int
-    /// 指向分配内存空间的指针
+    /// 指向分配内存空间的指针 (Pointer to allocated storage)
     fileprivate(set) var elements: UnsafeMutablePointer<Element>
     
     
