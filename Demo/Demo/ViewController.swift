@@ -15,13 +15,15 @@ class ViewController: UIViewController {
         
         print("begin - test")
         
-//        SingleLinkedListTest.test()
-//        DoubleLinkedListTest.test()
-//        CircularLinkedListTest.test()
+        SingleLinkedListTest.test()
+        DoubleLinkedListTest.test()
+        CircularLinkedListTest.test()
 
         QueueTest.test()
-//        DequeTest.test()
-//        CircularQueueTest.test()
+        DequeTest.test()
+        CircularQueueTest.test()
+        
+        StackTest.test()
         
         print("end - test")
         

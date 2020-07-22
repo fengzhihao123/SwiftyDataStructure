@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DE03E06D24C8077F000E4A83 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE03E06C24C8077F000E4A83 /* Stack.swift */; };
+		DE03E07024C80D24000E4A83 /* StackTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE03E06F24C80D24000E4A83 /* StackTest.swift */; };
 		DE70B83824C148BA0083FE9B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE70B83724C148BA0083FE9B /* AppDelegate.swift */; };
 		DE70B83A24C148BA0083FE9B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE70B83924C148BA0083FE9B /* SceneDelegate.swift */; };
 		DE70B83C24C148BA0083FE9B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE70B83B24C148BA0083FE9B /* ViewController.swift */; };
@@ -29,6 +31,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DE03E06C24C8077F000E4A83 /* Stack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
+		DE03E06F24C80D24000E4A83 /* StackTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackTest.swift; sourceTree = "<group>"; };
 		DE70B83424C148BA0083FE9B /* Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE70B83724C148BA0083FE9B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DE70B83924C148BA0083FE9B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +67,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DE03E06B24C80770000E4A83 /* Stack */ = {
+			isa = PBXGroup;
+			children = (
+				DE03E06C24C8077F000E4A83 /* Stack.swift */,
+			);
+			path = Stack;
+			sourceTree = "<group>";
+		};
+		DE03E06E24C80D13000E4A83 /* StackTests */ = {
+			isa = PBXGroup;
+			children = (
+				DE03E06F24C80D24000E4A83 /* StackTest.swift */,
+			);
+			path = StackTests;
+			sourceTree = "<group>";
+		};
 		DE70B82B24C148BA0083FE9B = {
 			isa = PBXGroup;
 			children = (
@@ -98,6 +118,7 @@
 		DE70B84B24C148DC0083FE9B /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				DE03E06B24C80770000E4A83 /* Stack */,
 				DE70B84C24C148DC0083FE9B /* LinkedList */,
 				DE70B85124C148DC0083FE9B /* Queue */,
 			);
@@ -129,6 +150,7 @@
 		DE70B85524C148DC0083FE9B /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				DE03E06E24C80D13000E4A83 /* StackTests */,
 				DE70B86524C14A360083FE9B /* QueueTests */,
 				DE70B86C24C14ABF0083FE9B /* LinkedListTests */,
 			);
@@ -230,10 +252,12 @@
 				DE70B86424C149D30083FE9B /* CircularQueueTest.swift in Sources */,
 				DE70B85A24C148DC0083FE9B /* CircularQueue.swift in Sources */,
 				DE70B83C24C148BA0083FE9B /* ViewController.swift in Sources */,
+				DE03E06D24C8077F000E4A83 /* Stack.swift in Sources */,
 				DE70B85B24C148DC0083FE9B /* Deque.swift in Sources */,
 				DE70B85824C148DC0083FE9B /* CircularLinkedList.swift in Sources */,
 				DE70B85924C148DC0083FE9B /* LinkedListFunction.swift in Sources */,
 				DE70B85E24C1493F0083FE9B /* Queue.swift in Sources */,
+				DE03E07024C80D24000E4A83 /* StackTest.swift in Sources */,
 				DE70B86224C1499A0083FE9B /* DequeTest.swift in Sources */,
 				DE70B86724C14A610083FE9B /* SingleLinkedListTest.swift in Sources */,
 				DE70B85724C148DC0083FE9B /* SingleLinkedList.swift in Sources */,

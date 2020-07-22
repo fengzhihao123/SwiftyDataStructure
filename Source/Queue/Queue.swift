@@ -26,7 +26,7 @@ public struct Queue<Element> {
     }
     
     /// 入队 (Enter Queue)
-    /// - Parameter newElement: 入队的元素 （The Element of enter queue）
+    /// - Parameter newElement: 入队的元素 （The element of enter queue）
     public mutating func append(_ newElement: Element) {
         // 自动扩容，复杂度O(n) (Automatic expansion, Complexity: O(n))
         if _queueBuffer.isFull {
@@ -38,7 +38,7 @@ public struct Queue<Element> {
     }
     
     /// 出队 (Dequeue)
-    /// - Returns: 出队的元素 （The Element of dequeue）
+    /// - Returns: 出队的元素 （The element of dequeue）
     @discardableResult
     public mutating func popFirst() -> Element? {
         return _queueBuffer.popFirst()
@@ -47,7 +47,7 @@ public struct Queue<Element> {
 
 
 
-/// 队列底部结构 (Storage buffer for a deque)
+/// 队列底部结构 (Storage buffer for a Queue)
 final class QueueBuffer<Element> {
     
     /// buffer 的容量 (The capacity of this storage buffer)
@@ -116,18 +116,5 @@ final class QueueBuffer<Element> {
         
         elements.advanced(by: count).initialize(to: newElement)
         count += 1
-    }
-}
-
-extension QueueBuffer {
-    subscript(index: Int) -> Element {
-        set {
-            assert(index < 0 || index >= count)
-            elements.advanced(by: index).pointee = newValue
-        }
-        get {
-            assert(index < 0 || index >= count)
-            return elements.advanced(by: index).pointee
-        }
     }
 }
