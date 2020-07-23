@@ -25,6 +25,8 @@ struct StackTest {
         assert(stack.pop() == "Java")
         assert(stack.pop() == "Swift")
         assert(stack.isEmpty)
+        
+        print(Stack<Int>.reversePolish(notation: "9 3 1 - 3 * + 10 2 / +"))
     }
     
 }

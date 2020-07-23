@@ -36,6 +36,43 @@ public struct Stack<Element> {
     }
 }
 
+extension Stack {
+    private enum Alg: String {
+        case add = "+"
+        case subtraction = "-"
+        case multiplication = "*"
+        case division = "/"
+    }
+    
+    static func reversePolish(notation: String) -> Int {
+        //如果当前字符为变量或者为数字，则压栈，如果是运算符，则将栈顶两个元素弹出作相应运算，结果再入栈，最后当表达式扫描完后，栈里的就是结果。
+        let operatorStack = Stack<Int>(capacity: notation.count)
+        let elements = notation.components(separatedBy: " ")
+        for ele in elements {
+            if let num = Int(ele) {
+                operatorStack.push(num)
+            } else {
+                guard let alg = Alg(rawValue: ele) else { fatalError("出现不支持字符") }
+                let rightNum = operatorStack.pop()
+                let leftNum = operatorStack.pop()
+                switch alg {
+                case .add:
+                    operatorStack.push(leftNum + rightNum)
+                case .subtraction:
+                    operatorStack.push(leftNum - rightNum)
+                case .multiplication:
+                    operatorStack.push(leftNum * rightNum)
+                case .division:
+                    operatorStack.push(leftNum / rightNum)
+                }
+            }
+        }
+        
+        return operatorStack.pop()
+    }
+    
+}
+
 
 
 /// 栈的底层结构(Storage buffer for a Stack)
