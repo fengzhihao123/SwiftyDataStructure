@@ -4,10 +4,12 @@ Implement common Data Structure by Swift
 ## Implemented
 * 链表
 * 队列
+* 二叉树
 
 ## 特性
 * 所有数据结构支持泛型
 * 队列支持自动扩容
+* 二叉树的前中后层序遍历
 
 ## 链表
 ### 单链表/双向链表/循环链表 API
