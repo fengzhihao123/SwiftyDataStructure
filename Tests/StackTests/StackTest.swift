@@ -28,5 +28,4 @@ struct StackTest {
         
         print(Stack<Int>.reversePolish(notation: "9 3 1 - 3 * + 10 2 / +"))
     }
-    
 }
