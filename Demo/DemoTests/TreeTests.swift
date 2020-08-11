@@ -56,4 +56,14 @@ class TreeTests: XCTestCase {
     func testTreeCount() {
         XCTAssert(tree.count == 6)
     }
+    
+    func testMaxDepthWithPara() {
+        XCTAssertFalse(tree.maxDepth(root: tree) == 3)
+        XCTAssert(tree.maxDepth(root: tree) == 4)
+    }
+    
+    func testMaxDepth() {
+        XCTAssertFalse(tree.maxDepth() == 3)
+        XCTAssert(tree.maxDepth() == 4)
+    }
 }

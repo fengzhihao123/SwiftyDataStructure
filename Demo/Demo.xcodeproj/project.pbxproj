@@ -178,7 +178,6 @@
 		DE70B85524C148DC0083FE9B /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				DEC3ADEA24DD4389006EB0EA /* TreeTests */,
 				DE03E06E24C80D13000E4A83 /* StackTests */,
 				DE70B86524C14A360083FE9B /* QueueTests */,
 				DE70B86C24C14ABF0083FE9B /* LinkedListTests */,
@@ -213,13 +212,6 @@
 				DEC3ADE824DD40D7006EB0EA /* BinaryTree.swift */,
 			);
 			path = Tree;
-			sourceTree = "<group>";
-		};
-		DEC3ADEA24DD4389006EB0EA /* TreeTests */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = TreeTests;
 			sourceTree = "<group>";
 		};
 		DEC3ADF024DD43C3006EB0EA /* DemoTests */ = {
