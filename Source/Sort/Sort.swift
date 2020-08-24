@@ -8,8 +8,12 @@
 
 import Foundation
 
-struct Sort {
-    static func bubbleSort(target: [Int]) -> [Int] {
+struct Sort { }
+
+extension Sort {
+    /// 冒泡排序 - 时间复杂度 n²，稳定排序
+    /// - Parameter target: 待排序数组
+    static func bubbleSort<E: Comparable>(target: [E]) -> [E] {
         var result = target
         for outIndex in stride(from: result.count - 1, through: 0, by: -1) {
             for inIndex in 0...outIndex {
@@ -20,14 +24,13 @@ struct Sort {
         }
         return result
     }
-    
-    static func quickSort(target: [Int]) -> [Int] {
-        guard target.count > 1 else { return target }
-        let piovt = target[0]
-        let less = target.filter { $0 < piovt }
-        let equal = target.filter { $0 == piovt }
-        let greater = target.filter { $0 > piovt}
-        return quickSort(target: less) + equal + quickSort(target: greater)
+}
+
+extension Sort {
+    /// 快拍 - 平均复杂度 nlogn，最坏复杂度n²，不稳定排序
+    /// - Parameter target: 待排序数组
+    static func quickSort(target: inout [Int]) {
+        quickSort(target: &target, start: 0, end: target.count - 1)
     }
     
     static func quickSort(target: inout [Int], start: Int, end: Int) {
@@ -50,5 +53,39 @@ struct Sort {
         arr[start] = arr[mark]
         arr[mark] = pivot
         return mark
+    }
+}
+
+extension Sort {
+    /// 堆拍 - 平均复杂度 nlogn，最坏复杂度nlogn，不稳定排序
+    /// - Parameter target: 待排序数组
+    static func heapSort(target: inout [Int]) {
+        let heap = BinaryHeap()
+        heap.buildMaxHeap(heap: &target)
+        
+        for i in stride(from: target.count - 1, through: 0, by: -1) {
+            var parentIndex = 0
+            target.swapAt(parentIndex, i)
+            heap.maxSinking(heap: &target, parentIndex: &parentIndex, count: i)
+        }
+    }
+}
+
+extension Sort {
+    /// 计数排序，时间复杂度 m+n
+    /// - Parameter target:待排序数组
+    /// 局限：最大值与最小值差距过大不适合；只适用整数
+    static func countSort(target: [Int]) -> [Int] {
+        let max = target.max() ?? 0
+        let min = target.min() ?? 0
+        
+        var countNums = Array(repeating: 0, count: max - min + 1)
+        target.forEach { countNums[$0 - min] += 1 }
+        var result = [Int]()
+        for idx in 0..<countNums.count {
+            let seq = Array(repeating: idx + min, count: countNums[idx])
+            result.append(contentsOf: seq)
+        }
+        return result
     }
 }

@@ -30,23 +30,23 @@ struct BinaryHeap {
     public func minFloating(heap: inout [Int]) {
         floating(withMin: true, heap: &heap)
     }
-}
-
-private extension BinaryHeap {
-    func maxSinking(heap: inout [Int], parentIndex: inout Int, count: Int) {
+    
+    public func maxSinking(heap: inout [Int], parentIndex: inout Int, count: Int) {
         sinking(withMin: false,
                 heap: &heap,
                 parentIndex: &parentIndex,
                 count: count)
     }
     
-    func minSinking(heap: inout [Int], parentIndex: inout Int, count: Int) {
+    public func minSinking(heap: inout [Int], parentIndex: inout Int, count: Int) {
         sinking(withMin: true,
                 heap: &heap,
                 parentIndex: &parentIndex,
                 count: count)
     }
-    
+}
+
+private extension BinaryHeap {
     func floating(withMin min: Bool, heap: inout [Int]) {
         var childIndex = heap.count - 1
         var parentIndex = (childIndex - 1) / 2

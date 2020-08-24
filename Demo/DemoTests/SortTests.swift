@@ -26,14 +26,26 @@ class SortTests: XCTestCase {
     }
     
     func testQuickSort() {
-        let arr = [4,4,6,5,3,2,8,1]
-        let result = Sort.quickSort(target: arr)
-        assert(result == [1,2,3,4,4,5,6,8])
+        var arr = [4,4,6,5,3,2,8,1]
+        Sort.quickSort(target: &arr)
+        assert(arr == [1,2,3,4,4,5,6,8])
     }
     
     func testQuickSortRange() {
         var arr = [4,4,6,5,3,2,8,1]
         Sort.quickSort(target: &arr, start: 0, end: arr.count - 1)
         assert(arr == [1,2,3,4,4,5,6,8])
+    }
+    
+    func testHeapSort() {
+        var arr = [4,4,6,5,3,2,8,1]
+        Sort.heapSort(target: &arr)
+        assert(arr == [1,2,3,4,4,5,6,8])
+    }
+    
+    func testCountSort() {
+        let arr = [95, 94, 91, 98, 99, 90, 99, 93, 91, 92]
+        let res = Sort.countSort(target: arr)
+        assert(res == [90, 91, 91, 92, 93, 94, 95, 98, 99, 99])
     }
 }
