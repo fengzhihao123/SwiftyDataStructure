@@ -108,3 +108,34 @@ class StackBuffer<Element> {
         return last
     }
 }
+
+
+//struct MinStack<E: Comparable> {
+//    private var _contentStack = Stack<E>(capacity: 10)
+//    private var _minStack = Stack<E>(capacity: 10)
+//    
+//    init() { }
+//    
+//    public mutating func push(_ newElement: E) {
+//        _contentStack.push(newElement)
+//        if _minStack.isEmpty || newElement <= _minStack.top {
+//            _minStack.push(newElement)
+//        }
+//    }
+//    
+//    public mutating func pop() -> E {
+//        let last = _contentStack.pop()
+//        if last <= _minStack.top {
+//            let _ = _minStack.pop()
+//        }
+//        return last
+//    }
+//    
+//    public func top() -> E {
+//        return _contentStack.top
+//    }
+//    
+//    public func min() -> E {
+//        return _minStack.top
+//    }
+//}
