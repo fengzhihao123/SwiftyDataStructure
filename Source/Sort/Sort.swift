@@ -72,7 +72,7 @@ extension Sort {
 }
 
 extension Sort {
-    /// 计数排序，时间复杂度 m+n
+    /// 计数排序，时间复杂度 m+n，稳定排序
     /// - Parameter target:待排序数组
     /// 局限：最大值与最小值差距过大不适合；只适用整数
     static func countSort(target: [Int]) -> [Int] {
@@ -87,5 +87,58 @@ extension Sort {
             result.append(contentsOf: seq)
         }
         return result
+    }
+    
+    static func countSort1(target: [Int]) -> [Int] {
+        let max = target.max() ?? 0
+        let min = target.min() ?? 0
+        var countNums = Array(repeating: 0, count: max - min + 1)
+        
+        for idx in 0..<target.count {
+            let countIdx = target[idx] - min
+            countNums[countIdx] += 1
+        }
+        
+        for idx in 1..<countNums.count {
+            countNums[idx] += countNums[idx - 1]
+        }
+        
+        var sorted = Array(repeating: 0, count: target.count)
+        for idx in stride(from: target.count - 1, through: 0, by: -1) {
+            let sortedIdx = countNums[target[idx] - min] - 1
+            sorted[sortedIdx] = target[idx]
+            countNums[target[idx] - min] -= 1
+            
+        }
+        return sorted
+    }
+}
+
+extension Sort {
+    /// 桶排序，时间复杂度 n，稳定排序
+    /// - Parameter target:待排序数组
+    /// 局限：时间复杂度可能退化到 nlogn
+    static func bucketSort(target: [Double]) -> [Double] {
+        let max = target.max() ?? 0.0
+        let min = target.min() ?? 0.0
+        let d = max - min
+        
+        let bucketNum = target.count
+        
+        var bucketList = Array(repeating: [Double](), count: target.count)
+        for idx in 0..<target.count {
+            let num = Int((target[idx] - min) * Double(bucketNum - 1) / d)
+            bucketList[num].append(target[idx])
+        }
+        
+        for idx in 0..<target.count {
+            bucketList[idx] = bucketList[idx].sorted()
+        }
+        
+        let sorted = bucketList.reduce([]) { (result, curr) -> [Double] in
+            return result + curr
+        }
+        
+        return sorted
     }
 }

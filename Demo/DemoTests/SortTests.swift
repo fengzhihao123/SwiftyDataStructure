@@ -48,4 +48,17 @@ class SortTests: XCTestCase {
         let res = Sort.countSort(target: arr)
         assert(res == [90, 91, 91, 92, 93, 94, 95, 98, 99, 99])
     }
+    
+    func testCountSort1() {
+        let arr = [95, 94, 91, 98, 99, 90, 99, 93, 91, 92]
+        let res = Sort.countSort1(target: arr)
+        assert(res == [90, 91, 91, 92, 93, 94, 95, 98, 99, 99])
+    }
+    
+    func testBucketSort() {
+        let arr = [4.12, 6.421, 0.0023, 3.0, 2.123, 8.122, 4.12, 10.09]
+        let res = Sort.bucketSort(target: arr)
+        XCTAssertFalse(res == [])
+        XCTAssertTrue(res == [0.0023, 2.123, 3.0, 4.12, 4.12, 6.421, 8.122, 10.09])
+    }
 }
