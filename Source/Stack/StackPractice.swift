@@ -78,3 +78,23 @@ struct QueueByStack<E> {
         }
     }
 }
+
+struct ReverseStack {
+    static public func reverse(stack: inout [Int]) {
+        guard !stack.isEmpty else { return }
+        let last = getAndRemoveLast(stack: &stack)
+        reverse(stack: &stack)
+        stack.append(last)
+    }
+    
+    static private func getAndRemoveLast(stack: inout [Int]) -> Int {
+        guard let result = stack.popLast() else { fatalError("stack 不应为空") }
+        if stack.isEmpty {
+            return result
+        } else {
+            let last = getAndRemoveLast(stack: &stack)
+            stack.append(result)
+            return last
+        }
+    }
+}

@@ -39,6 +39,8 @@
 		DEC3AE0224E3EFF8006EB0EA /* BinaryHeap.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC3AE0124E3EFF8006EB0EA /* BinaryHeap.swift */; };
 		DEEEE41624F50BC300EB0F42 /* LinkedListPractice.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEEEE41524F50BC300EB0F42 /* LinkedListPractice.swift */; };
 		DEEEE41824F50D5700EB0F42 /* LinkedListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEEEE41724F50D5700EB0F42 /* LinkedListTests.swift */; };
+		DEEEE41A24F636B000EB0F42 /* QueuePractice.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEEEE41924F636B000EB0F42 /* QueuePractice.swift */; };
+		DEEEE41C24F656DD00EB0F42 /* QueueTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEEEE41B24F656DD00EB0F42 /* QueueTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +90,8 @@
 		DEC3AE0124E3EFF8006EB0EA /* BinaryHeap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinaryHeap.swift; sourceTree = "<group>"; };
 		DEEEE41524F50BC300EB0F42 /* LinkedListPractice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkedListPractice.swift; sourceTree = "<group>"; };
 		DEEEE41724F50D5700EB0F42 /* LinkedListTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkedListTests.swift; sourceTree = "<group>"; };
+		DEEEE41924F636B000EB0F42 /* QueuePractice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueuePractice.swift; sourceTree = "<group>"; };
+		DEEEE41B24F656DD00EB0F42 /* QueueTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueueTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -190,6 +194,7 @@
 				DE70B85224C148DC0083FE9B /* CircularQueue.swift */,
 				DE70B85324C148DC0083FE9B /* Deque.swift */,
 				DE70B85D24C1493F0083FE9B /* Queue.swift */,
+				DEEEE41924F636B000EB0F42 /* QueuePractice.swift */,
 			);
 			path = Queue;
 			sourceTree = "<group>";
@@ -252,6 +257,7 @@
 				DEB7056C24ECCC730014B58E /* SortTests.swift */,
 				DE69F48224F4A72600F128CB /* StackTests.swift */,
 				DEEEE41724F50D5700EB0F42 /* LinkedListTests.swift */,
+				DEEEE41B24F656DD00EB0F42 /* QueueTests.swift */,
 			);
 			path = DemoTests;
 			sourceTree = "<group>";
@@ -371,6 +377,7 @@
 				DE70B86224C1499A0083FE9B /* DequeTest.swift in Sources */,
 				DE70B86724C14A610083FE9B /* SingleLinkedListTest.swift in Sources */,
 				DE70B85724C148DC0083FE9B /* SingleLinkedList.swift in Sources */,
+				DEEEE41A24F636B000EB0F42 /* QueuePractice.swift in Sources */,
 				DE70B83824C148BA0083FE9B /* AppDelegate.swift in Sources */,
 				DE70B86024C1497C0083FE9B /* QueueTest.swift in Sources */,
 				DEC3AE0224E3EFF8006EB0EA /* BinaryHeap.swift in Sources */,
@@ -392,6 +399,7 @@
 				DEB7056D24ECCC730014B58E /* SortTests.swift in Sources */,
 				DEC3ADFA24DD43E3006EB0EA /* TreeTests.swift in Sources */,
 				DEEEE41824F50D5700EB0F42 /* LinkedListTests.swift in Sources */,
+				DEEEE41C24F656DD00EB0F42 /* QueueTests.swift in Sources */,
 				DEB7056824EA8AEB0014B58E /* BinaryHeapTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

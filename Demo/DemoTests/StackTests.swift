@@ -10,15 +10,6 @@ import XCTest
 @testable import Demo
 
 class StackTests: XCTestCase {
-
-    override func setUp() {
-         
-    }
-
-    override func tearDown() {
-        
-    }
-
     func testMinStack() {
         var stack = MinStack<Int>()
         stack.push(-2)
@@ -39,6 +30,14 @@ class StackTests: XCTestCase {
         XCTAssertTrue(queue.top() == 1)
         XCTAssertTrue(queue.pop() == 1)
         XCTAssertFalse(queue.empty())
+    }
+    
+    func testReverse() {
+        var stack = [1, 2, 3]
+        ReverseStack.reverse(stack: &stack)
         
+        XCTAssertFalse(stack.isEmpty)
+        XCTAssertFalse(stack == [1, 2, 3])
+        XCTAssertTrue(stack == [3, 2, 1])
     }
 }
