@@ -30,6 +30,8 @@
 		DE70B86724C14A610083FE9B /* SingleLinkedListTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE70B86624C14A610083FE9B /* SingleLinkedListTest.swift */; };
 		DE70B86924C14A8A0083FE9B /* DoubleLinkedListTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE70B86824C14A8A0083FE9B /* DoubleLinkedListTest.swift */; };
 		DE70B86B24C14AAB0083FE9B /* CircularLinkedListTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE70B86A24C14AAB0083FE9B /* CircularLinkedListTest.swift */; };
+		DE74542324FCEE9300059F25 /* OtherPractice.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE74542224FCEE9300059F25 /* OtherPractice.swift */; };
+		DE74542524FCF02000059F25 /* OtherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE74542424FCF02000059F25 /* OtherTests.swift */; };
 		DEB7056824EA8AEB0014B58E /* BinaryHeapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB7056724EA8AEB0014B58E /* BinaryHeapTests.swift */; };
 		DEB7056B24ECB3C30014B58E /* Sort.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB7056A24ECB3C30014B58E /* Sort.swift */; };
 		DEB7056D24ECCC730014B58E /* SortTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB7056C24ECCC730014B58E /* SortTests.swift */; };
@@ -79,6 +81,8 @@
 		DE70B86624C14A610083FE9B /* SingleLinkedListTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleLinkedListTest.swift; sourceTree = "<group>"; };
 		DE70B86824C14A8A0083FE9B /* DoubleLinkedListTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleLinkedListTest.swift; sourceTree = "<group>"; };
 		DE70B86A24C14AAB0083FE9B /* CircularLinkedListTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularLinkedListTest.swift; sourceTree = "<group>"; };
+		DE74542224FCEE9300059F25 /* OtherPractice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherPractice.swift; sourceTree = "<group>"; };
+		DE74542424FCF02000059F25 /* OtherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherTests.swift; sourceTree = "<group>"; };
 		DEB7056724EA8AEB0014B58E /* BinaryHeapTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinaryHeapTests.swift; sourceTree = "<group>"; };
 		DEB7056A24ECB3C30014B58E /* Sort.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sort.swift; sourceTree = "<group>"; };
 		DEB7056C24ECCC730014B58E /* SortTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortTests.swift; sourceTree = "<group>"; };
@@ -166,6 +170,7 @@
 		DE70B84B24C148DC0083FE9B /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				DE74542124FCEE7200059F25 /* Other */,
 				DEB7056924EBC6B70014B58E /* Sort */,
 				DEC3ADE724DD4078006EB0EA /* Tree */,
 				DE03E06B24C80770000E4A83 /* Stack */,
@@ -230,6 +235,14 @@
 			path = LinkedListTests;
 			sourceTree = "<group>";
 		};
+		DE74542124FCEE7200059F25 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				DE74542224FCEE9300059F25 /* OtherPractice.swift */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
 		DEB7056924EBC6B70014B58E /* Sort */ = {
 			isa = PBXGroup;
 			children = (
@@ -258,6 +271,7 @@
 				DE69F48224F4A72600F128CB /* StackTests.swift */,
 				DEEEE41724F50D5700EB0F42 /* LinkedListTests.swift */,
 				DEEEE41B24F656DD00EB0F42 /* QueueTests.swift */,
+				DE74542424FCF02000059F25 /* OtherTests.swift */,
 			);
 			path = DemoTests;
 			sourceTree = "<group>";
@@ -386,6 +400,7 @@
 				DEC3ADE924DD40D7006EB0EA /* BinaryTree.swift in Sources */,
 				DE70B85624C148DC0083FE9B /* DoubleLinkedList.swift in Sources */,
 				DEEEE41624F50BC300EB0F42 /* LinkedListPractice.swift in Sources */,
+				DE74542324FCEE9300059F25 /* OtherPractice.swift in Sources */,
 				DE70B86B24C14AAB0083FE9B /* CircularLinkedListTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -394,6 +409,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE74542524FCF02000059F25 /* OtherTests.swift in Sources */,
 				DE69F48324F4A72600F128CB /* StackTests.swift in Sources */,
 				DEC3ADF224DD43C3006EB0EA /* DemoTests.swift in Sources */,
 				DEB7056D24ECCC730014B58E /* SortTests.swift in Sources */,
