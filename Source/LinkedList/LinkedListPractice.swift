@@ -23,7 +23,6 @@ struct LinkedListPractice {
                 return true
             }
         }
-        return false
     }
     
     /// 计算环的长度

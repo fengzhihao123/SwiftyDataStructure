@@ -44,4 +44,16 @@ class OtherTests: XCTestCase {
         XCTAssertTrue(OtherPractice.isPowerOfTwo(num: 8))
         XCTAssertFalse(OtherPractice.isPowerOfTwo(num: 7))
     }
+    
+    func testBigNumSum() {
+        let res1 = OtherPractice.bigNumSum(num1: "4268764637298263637", num2: "9287674899027364")
+        XCTAssert(res1 == "4278052312197291001")
+
+        let res2 = OtherPractice.bigNumSum(num1: "11111111111", num2: "22222222222")
+        XCTAssert(res2 == "33333333333")
+        
+        let res3 = OtherPractice.bigNumSum(num1: "1111111111", num2: "22222222222")
+        XCTAssert(res3 == "23333333333")
+        
+    }
 }
