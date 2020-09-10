@@ -94,4 +94,42 @@ struct OtherPractice {
         result = result.reversed()
         return result.joined()
     }
+    
+    /// 亲密字符串
+    /// - Parameters:
+    ///   - A: A
+    ///   - B: B
+    static func buddyStrings(_ a: String, _ b: String) -> Bool {
+        guard a.count == b.count else { return false }
+        if a == b {
+            var count = Array(repeating: 0, count: 26)
+            for i in 0..<a.count {
+                let curAscii = a[a.index(a.startIndex, offsetBy: i)].asciiValue!
+                let baseAscii = ("a" as Character).asciiValue!
+                let index = Int(curAscii - baseAscii)
+                count[index] += 1
+            }
+            
+            return count.filter { $0 > 1 }.count > 0
+        } else {
+            var first = -1
+            var second = -1
+            for i in 0..<a.count {
+                let charA = a[a.index(a.startIndex, offsetBy: i)]
+                let charB = b[b.index(b.startIndex, offsetBy: i)]
+                
+                if charA != charB {
+                    if first == -1 {
+                        first = i
+                    } else if second == -1 {
+                        second = i
+                    } else {
+                        return false
+                    }
+                }
+            }
+            
+            return (second != -1 && a[a.index(a.startIndex, offsetBy: first)] == b[b.index(b.startIndex, offsetBy: second)]) && (a[a.index(a.startIndex, offsetBy: second)] == b[b.index(b.startIndex, offsetBy: first)])
+        }
+    }
 }

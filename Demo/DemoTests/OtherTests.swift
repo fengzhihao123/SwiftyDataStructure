@@ -56,4 +56,18 @@ class OtherTests: XCTestCase {
         XCTAssert(res3 == "23333333333")
         
     }
+    
+    func testMissStr() {
+        let res = OtherPractice.buddyStrings("abac", "abad")
+        XCTAssertFalse(res)
+        
+        let res1 = OtherPractice.buddyStrings("ab", "ab")
+        XCTAssertFalse(res1)
+        
+        let res2 = OtherPractice.buddyStrings("ab", "ba")
+        XCTAssertTrue(res2)
+        
+        let res3 = OtherPractice.buddyStrings("aa", "aa")
+        XCTAssertTrue(res3)
+    }
 }
