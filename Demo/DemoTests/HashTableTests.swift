@@ -19,14 +19,14 @@ class HashTableTests: XCTestCase {
     }
 
     func testExample() {
-        let hashTable = HashTable<String, Int>(capacity: 10)
-        hashTable.setValue(value: 1, forKey: "key1")
-        hashTable.setValue(value: 2, forKey: "key2")
-        hashTable.setValue(value: 3, forKey: "key3")
-        XCTAssert(hashTable.object(forKey: "key1") == 1)
-        XCTAssert(hashTable.object(forKey: "key2") == 2)
-        hashTable.setValue(value: 3, forKey: "key1")
-        XCTAssert(hashTable.object(forKey: "key1") == 3)
+        var hashTable = HashTable<String, Int>(capacity: 10)
+        hashTable["key1"] = 1
+        hashTable["key2"] = 2
+        hashTable["key3"] = 3
+        XCTAssert(hashTable.value(forKey: "key1")! == 1)
+        XCTAssert(hashTable.value(forKey: "key2")! == 2)
+        hashTable["key1"] = 3
+        XCTAssert(hashTable.value(forKey: "key1")! == 3)
     }
 
     func testPerformanceExample() {
