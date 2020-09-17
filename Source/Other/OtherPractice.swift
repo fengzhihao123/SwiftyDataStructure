@@ -132,4 +132,52 @@ struct OtherPractice {
             return (second != -1 && a[a.index(a.startIndex, offsetBy: first)] == b[b.index(b.startIndex, offsetBy: second)]) && (a[a.index(a.startIndex, offsetBy: second)] == b[b.index(b.startIndex, offsetBy: first)])
         }
     }
+    
+    
+    /// 寻找全排列的下一个数
+    /// - Parameter nums: 当前数
+    static func findNearestNumber(nums: [Int]) -> [Int]? {
+        func reverse(nums: [Int], index: Int) -> [Int] {
+            var result = nums
+            
+            var i = index
+            var j = result.count - 1
+            while i < j {
+                result.swapAt(i, j)
+                i += 1
+                j -= 1
+            }
+            return result
+        }
+        
+        func exchangeHead(nums: [Int], index: Int) -> [Int] {
+            var result = nums
+            let head = result[index - 1]
+            for i in stride(from: result.count - 1, to: 0, by: -1) {
+                if head < result[i] {
+                    result[index - 1] = result[i]
+                    result[i] = head
+                    break
+                }
+            }
+            return result
+        }
+        
+        func findTransferPoint(nums: [Int]) -> Int {
+            for i in stride(from: nums.count - 1, to: 0, by: -1) {
+                if nums[i] > nums[i - 1] {
+                    return i
+                }
+            }
+            return 0
+        }
+        
+        let index = findTransferPoint(nums: nums)
+        if index == 0 {
+            return nil
+        }
+        let alreadyExchangeHead = exchangeHead(nums: nums, index: index)
+        let result = reverse(nums: alreadyExchangeHead, index: index)
+        return result
+    }
 }

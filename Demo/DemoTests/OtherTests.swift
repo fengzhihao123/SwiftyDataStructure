@@ -70,4 +70,15 @@ class OtherTests: XCTestCase {
         let res3 = OtherPractice.buddyStrings("aa", "aa")
         XCTAssertTrue(res3)
     }
+    
+    func testNearestNum() {
+        let res = OtherPractice.findNearestNumber(nums: [1, 2, 3, 4, 5])
+        XCTAssert(res == [1, 2, 3, 5, 4])
+        
+        let res1 = OtherPractice.findNearestNumber(nums: res!)
+        XCTAssert(res1 == [1, 2, 4, 3, 5])
+        
+        let res2 = OtherPractice.findNearestNumber(nums: res1!)
+        XCTAssert(res2 == [1, 2, 4, 5, 3])
+    }
 }
